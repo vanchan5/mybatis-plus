@@ -1,5 +1,9 @@
 import java.time.LocalDateTime
 
+plugins{
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
 allprojects {
     group = 'com.baomidou'
     version = "3.5.0.2-SNAPSHOT"
@@ -79,6 +83,7 @@ subprojects {
     apply plugin: 'maven-publish'
     apply plugin: "io.freefair.lombok"
     apply plugin: 'com.github.hierynomus.license'
+    apply plugin: 'io.spring.dependency-management'
 
     sourceCompatibility = "${javaVersion}"
     targetCompatibility = "${javaVersion}"
@@ -97,6 +102,15 @@ subprojects {
         testImplementation "${lib["lagarto"]}"
         testImplementation "${lib["logback-classic"]}"
     }
+
+    /*dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot:${springBootVersion}"
+        }
+        dependencies {
+            dependency "org.springframework.boot:spring-boot:${springBootVersion}"
+        }
+    }*/
 
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
