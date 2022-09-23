@@ -1,7 +1,9 @@
-package com.baomidou.mybatisplus.test.web;
+package com.baomidou.mybatisplus.test.web.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.test.web.mapper.SysRolesMapper;
+import com.baomidou.mybatisplus.test.web.po.SysRoles;
+import com.baomidou.mybatisplus.test.web.service.ISysRolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

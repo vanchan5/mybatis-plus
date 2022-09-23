@@ -1,7 +1,7 @@
 package com.baomidou.mybatisplus.test.web.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.baomidou.mybatisplus.test.web.SysRoles;
+import com.baomidou.mybatisplus.test.web.po.SysRoles;
 
 /**
  * <p>

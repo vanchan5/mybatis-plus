@@ -1,8 +1,9 @@
-package com.baomidou.mybatisplus.test.web;
+package com.baomidou.mybatisplus.test.web.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.test.web.enums.RoleLevelEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

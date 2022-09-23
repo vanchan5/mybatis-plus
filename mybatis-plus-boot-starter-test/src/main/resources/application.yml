@@ -19,3 +19,5 @@ springdoc:
         enabled: true
     swagger-ui:
         path: /swagger
+mybatis-plus:
+    typeEnumsPackage: com.baomidou.mybatisplus.test.web.enums

@@ -1,6 +1,7 @@
-package com.baomidou.mybatisplus.test.web;
+package com.baomidou.mybatisplus.test.web.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.baomidou.mybatisplus.test.web.po.SysRoles;
 
 /**
  * @Author vanchan

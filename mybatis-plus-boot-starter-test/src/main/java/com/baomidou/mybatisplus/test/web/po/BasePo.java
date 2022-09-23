@@ -1,4 +1,4 @@
-package com.baomidou.mybatisplus.test.web;
+package com.baomidou.mybatisplus.test.web.po;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

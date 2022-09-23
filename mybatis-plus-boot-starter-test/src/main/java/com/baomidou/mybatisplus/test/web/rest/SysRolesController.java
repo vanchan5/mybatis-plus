@@ -1,5 +1,7 @@
-package com.baomidou.mybatisplus.test.web;
+package com.baomidou.mybatisplus.test.web.rest;
 
+import com.baomidou.mybatisplus.test.web.service.ISysRolesService;
+import com.baomidou.mybatisplus.test.web.po.SysRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
