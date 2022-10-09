@@ -48,7 +48,7 @@ public abstract class AbstractSqlInjector implements ISqlInjector {
                 TableInfo tableInfo = TableInfoHelper.initTableInfo(builderAssistant, modelClass);
                 List<AbstractMethod> methodList = this.getMethodList(mapperClass, tableInfo);
                 if (CollectionUtils.isNotEmpty(methodList)) {
-                    // 循环注入自定义方法
+                    // 循环注入自定义方法，这里开始注入SQL
                     methodList.forEach(m -> m.inject(builderAssistant, mapperClass, modelClass, tableInfo));
                 } else {
                     logger.debug(mapperClass.toString() + ", No effective injection method was found.");

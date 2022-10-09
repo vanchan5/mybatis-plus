@@ -44,11 +44,14 @@ public class SelectById extends AbstractMethod {
 
     @Override
     public MappedStatement injectMappedStatement(Class<?> mapperClass, Class<?> modelClass, TableInfo tableInfo) {
+        /** 定义 mybatis xml method id, 对应 <id="xyz"> **/
         SqlMethod sqlMethod = SqlMethod.SELECT_BY_ID;
+        /** 构造 id 对应的具体 xml 片段 **/
         SqlSource sqlSource = new RawSqlSource(configuration, String.format(sqlMethod.getSql(),
                 sqlSelectColumns(tableInfo, false),
                 tableInfo.getTableName(), tableInfo.getKeyColumn(), tableInfo.getKeyProperty(),
                 tableInfo.getLogicDeleteSql(true, true)), Object.class);
+        /** 将 xml method 方法添加到 mybatis 的 MappedStatement 中 **/
         return this.addSelectMappedStatementForTable(mapperClass, getMethod(sqlMethod), sqlSource, tableInfo);
     }
 }

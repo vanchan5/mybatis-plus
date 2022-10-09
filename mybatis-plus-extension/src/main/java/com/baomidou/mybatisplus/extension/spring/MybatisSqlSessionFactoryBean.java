@@ -592,6 +592,7 @@ public class MybatisSqlSessionFactoryBean implements FactoryBean<SqlSessionFacto
                     try {
                         XMLMapperBuilder xmlMapperBuilder = new XMLMapperBuilder(mapperLocation.getInputStream(),
                             targetConfiguration, mapperLocation.toString(), targetConfiguration.getSqlFragments());
+                        // 解析Mapper
                         xmlMapperBuilder.parse();
                     } catch (Exception e) {
                         throw new NestedIOException("Failed to parse mapping resource: '" + mapperLocation + "'", e);

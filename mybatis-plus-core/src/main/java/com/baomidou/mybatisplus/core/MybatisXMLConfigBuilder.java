@@ -367,6 +367,7 @@ public class MybatisXMLConfigBuilder extends BaseBuilder {
     private void mapperElement(XNode parent) throws Exception {
         if (parent != null) {
             for (XNode child : parent.getChildren()) {
+                // 1、解析package配置方式
                 if ("package".equals(child.getName())) {
                     String mapperPackage = child.getStringAttribute("name");
                     configuration.addMappers(mapperPackage);
@@ -374,18 +375,21 @@ public class MybatisXMLConfigBuilder extends BaseBuilder {
                     String resource = child.getStringAttribute("resource");
                     String url = child.getStringAttribute("url");
                     String mapperClass = child.getStringAttribute("class");
+                    // 2、解析通过resource配置权限定路径xml映射文件方式
                     if (resource != null && url == null && mapperClass == null) {
                         ErrorContext.instance().resource(resource);
                         try(InputStream inputStream = Resources.getResourceAsStream(resource)) {
                             XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, resource, configuration.getSqlFragments());
                             mapperParser.parse();
                         }
+                        // 3、解析通过URL配置本地或远程xml映射文件方式
                     } else if (resource == null && url != null && mapperClass == null) {
                         ErrorContext.instance().resource(url);
                         try(InputStream inputStream = Resources.getUrlAsStream(url)){
                             XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, url, configuration.getSqlFragments());
                             mapperParser.parse();
                         }
+                        // 4、解析通过配置mapper接口方式的路径
                     } else if (resource == null && url == null && mapperClass != null) {
                         Class<?> mapperInterface = Resources.classForName(mapperClass);
                         configuration.addMapper(mapperInterface);
