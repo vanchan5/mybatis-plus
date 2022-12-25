@@ -1,11 +1,13 @@
 package com.baomidou.mybatisplus.test;
 
+import com.baomidou.mybatisplus.test.datasource.DynamicDataSourceRegister;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 /**
  * @author : cheng
@@ -14,8 +16,9 @@ import org.springframework.context.annotation.ComponentScan;
  * @since 2020/12/17 22:13
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class} )
-@MapperScan("com.baomidou.mybatisplus.test.web.mapper")
+@MapperScan(basePackages = {"com.baomidou.mybatisplus.test.web.mapper"})
 @ComponentScan(basePackages = {"com.baomidou.mybatisplus.test.**"})
+@Import({DynamicDataSourceRegister.class})
 @Slf4j
 public class TestApplication {
 

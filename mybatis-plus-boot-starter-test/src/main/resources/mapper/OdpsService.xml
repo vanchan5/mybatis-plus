@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baomidou.mybatisplus.test.web.mapper.OdpsMapper">
+
+
+    <select id="getSpeechAudioVin" resultType="java.lang.String">
+        select values1
+        from ads_vanchan_test
+        where ds = '20221223'
+    </select>
+</mapper>
