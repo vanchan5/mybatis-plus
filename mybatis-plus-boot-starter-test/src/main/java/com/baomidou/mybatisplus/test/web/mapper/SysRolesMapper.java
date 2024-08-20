@@ -2,6 +2,9 @@ package com.baomidou.mybatisplus.test.web.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.test.web.po.SysRoles;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.ArrayList;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.test.web.po.SysRoles;
  */
 public interface SysRolesMapper extends BaseMapper<SysRoles> {
 
+    SysRoles selectByIds(@Param("id") Long id);
 }

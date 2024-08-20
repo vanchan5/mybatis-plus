@@ -1,4 +1,4 @@
 ### 根据ID获取数据
-GET {{host}}/sys-roles/getRoleById/1340267310551670785
+GET {{host}}/sys-roles/getRoleById/13
 Content-Type: application/json
 Accept: application/json

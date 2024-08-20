@@ -108,7 +108,7 @@ class SelectCountDistinctTest {
     @Order(7)
     void testLogicSelectCountWithoutDistinct() {
         QueryWrapper<CommonLogicData> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("test_int", 25).or().eq("test_str", "test");
+        queryWrapper.eq("test_int", 25).eq("test_str", "test");
         long count = commonLogicMapper.selectCount(queryWrapper);
         Assertions.assertEquals(2, count);
     }

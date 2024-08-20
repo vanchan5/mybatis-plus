@@ -15,5 +15,26 @@
         upd_host,
         enabled, del_flag, name, default_role, description, data_type, system_type, store_id, price, level, is_success_als
     </sql>
+    <select id="selectByIds" resultType="com.baomidou.mybatisplus.test.web.po.SysRoles"
+            parameterType="java.lang.Long">
+        select a.*
+        <choose>
+            <when test='id == "1193054220921319426"'>
+                ,b.description,c.description
+            </when>
+            <otherwise>
+                ,1 as description
+            </otherwise>
+        </choose>
+
+        from sys_roles a
+        <if test='id == "1193054220921319426"'>
+            inner join sys_role b on a.id = b.id
+        </if>
+        where a.id = #{id}
+
+
+    </select>
+
 
 </mapper>
